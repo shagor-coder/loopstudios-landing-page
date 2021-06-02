@@ -1,0 +1,75 @@
+@mixin font400 {
+    font-size: 2.225rem;
+    font-weight: 300;
+    font-family: 'Josefin Sans', sans-serif;
+    color: $Black;
+    letter-spacing: 2px;
+    line-height: 1.25;
+    padding-bottom: 1.5rem;
+    word-wrap: break-word;
+    text-transform: uppercase;
+}
+@mixin font300 {
+    font-size: 1rem;
+    font-weight: 400;
+    font-family: 'Alata', sans-serif;;
+    color: $VaryDarkGray;
+    letter-spacing: 1px;
+    line-height: 2;
+}
+
+
+@mixin bgControl {
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+@mixin flexC($dirction) {
+    display: flex;
+    flex-basis: 100%;
+    align-items: center;
+    justify-content: center;
+    flex-direction: $dirction;
+}
+
+@mixin hoverEffect {
+    &::after{
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        height: 2px;
+        background: $White;
+        transition: all 0.5s ease;
+        opacity: 0;
+        transform: scaleX(0);
+        transform-origin: left;
+    }
+
+    &:hover::after{
+        opacity: 1;
+        transform: scaleX(1);
+    }
+}
+
+@mixin gridS {
+    display: grid;
+    grid-gap: 0.2rem;
+    grid-template-columns: repeat(1 , 1fr);
+    align-content: center;
+    justify-content: center;
+
+    @media (min-width: 48rem){
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    @media (min-width: 64rem){
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    @media (min-width: 64.1rem){
+        grid-template-columns: repeat(4, 1fr);
+    }
+}

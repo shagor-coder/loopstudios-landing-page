@@ -1,0 +1,45 @@
+.hero{
+    min-height: 60vh;
+    position: relative;
+    text-align: left;
+    display: grid;
+    place-items: center;
+    padding-top: 6rem;
+    background: url(../src/img/desktop/image-hero.jpg);
+
+    @include bgControl;
+
+
+    &__title{
+        display: block;
+        max-width: 500px;
+        @include font400;
+        font-size: 2.55rem;
+        text-transform: uppercase;
+        color: $White !important;
+        border: 0.125rem solid $White;
+        padding: 2rem  0.865rem;
+    }
+
+    @media (min-width: 48.1rem){
+
+        .content{
+            
+            width: 100vw;
+            min-height: 60vh;
+            position: relative;
+        }
+
+        &__title{
+            position: absolute;
+            top: 50%;
+            left: 0;
+            width: 34rem;
+            font-size: 3.5rem;
+
+            transform: translateY(-50%);
+        }
+       
+    }
+
+}   

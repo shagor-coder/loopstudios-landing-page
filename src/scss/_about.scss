@@ -1,0 +1,50 @@
+.about{
+    
+    .grid{
+        @include gridS;
+        text-align: center;
+        padding: 1rem;
+    }
+
+    .imgBx{
+        object-fit: cover;
+        height: 100%;
+
+        &__img{
+            height: 100%;
+            max-width: 100%;
+            object-fit: cover;
+        }
+    }
+
+    .contentBx{
+        margin-top: 2rem;
+
+        &__title{
+            @include font400;
+        }
+
+        &__des{
+            @include font300;
+        }
+    }
+
+    @media (min-width: 48.1rem){
+
+        .grid{
+            grid-template-columns: repeat(2, 1fr) !important;
+            position: relative;
+        }
+
+        .contentBx{
+            position: absolute;
+            top: 35%;
+            left: 40%;
+            width: 50%;
+            background: $White;
+            text-align: left;
+            padding: 3rem 0 .5rem 6rem;
+        }
+      
+    }
+}

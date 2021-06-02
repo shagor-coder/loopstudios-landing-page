@@ -1,0 +1,124 @@
+.main-header{
+    width: 100vw;
+    height: auto;
+    padding: 1.5rem 0 0.5rem 0;
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 9999;
+    background: transparent;
+    
+
+    &.active{
+        background: $Black;
+    }
+    .nav{
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-direction: row;
+
+        &__logo{
+            display: inline-block;
+            z-index: 100;
+            &__img{
+                max-width: 100%;
+            }
+        }
+
+        &__menu{
+            @include flexC(row);
+            justify-content: flex-end;
+
+            &__i{
+                display: inline-block;
+                position: relative;   
+
+                &:not(:last-child){
+                    margin-right: 0.825rem;
+                }
+
+            }
+
+            &__l{
+                @include font300;
+                padding-bottom: 0 !important;
+                color: $White !important;
+                position: relative;
+
+                @include hoverEffect;
+            }
+        }
+
+
+        @media (max-width: 48rem){
+
+            width: 100%;
+
+            &__toggle{
+                position: absolute;
+                top: 1.7rem;
+                right: 1rem;
+                width: 1.5rem;
+                height: 1.5rem;
+                background: url(../src/img/icon-hamburger.svg);
+
+                @include bgControl;
+
+                z-index: 100;
+                cursor: pointer;
+                
+                &.active{
+                background: url(../src/img/icon-close.svg);
+                
+                
+                @include bgControl;
+                }
+            }
+            
+            &__menu{
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100vw;
+                height: 100vh;
+                background-color: rgba(119, 68, 238, 0.583);
+                
+                @include flexC(column);
+                z-index: 1;
+                visibility: hidden;
+                opacity: 0;
+                animation: fadeOut 0.3s linear;
+
+                &__i{
+                    width: 90%;
+                    text-align: center;
+                    padding-bottom: 1rem;
+                    &:not(:last-child){
+                        margin-right: 0;
+                        margin-bottom: 0.1rem;
+                    }
+                }
+
+                &__l{
+                    @include font300;
+                    color: $White !important;
+                }
+
+                &.active{
+                    visibility: visible;
+                    opacity: 1;
+                    animation: fadeIn 0.3s linear;
+                }
+            }
+
+            &__logo{
+                display: inline-block;
+                &__img{
+                    width: 10rem;
+                }
+            }
+        }
+    }
+}
