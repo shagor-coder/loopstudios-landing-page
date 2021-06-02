@@ -18,7 +18,7 @@ mobileToggle.addEventListener('click', () => {
     scrollLock.classList.toggle('active')
 })
 
-const navLink = document.querySelectorAll('.nav__menu__link');
+const navLink = document.querySelectorAll('.nav__menu__l');
 
 navLink.forEach(function(navLink){
     navLink.addEventListener('click', () => {
